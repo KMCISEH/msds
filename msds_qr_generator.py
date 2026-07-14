@@ -108,7 +108,10 @@ def main():
         
         # URL 생성
         encoded_filename = clean_filename_for_url(filename)
-        file_url = BASE_URL + encoded_filename
+        raw_url = BASE_URL + encoded_filename
+        
+        # 안드로이드 등 모바일 브라우저에서 다운로드 창 대신 바로 PDF를 볼 수 있도록 Google Docs Viewer 사용
+        file_url = f"https://docs.google.com/viewer?url={urllib.parse.quote(raw_url, safe='')}"
         
         # QR 코드 생성
         qr = qrcode.QRCode(
