@@ -16,8 +16,8 @@ QR_DIR = os.path.join(TARGET_DIR, "QR_Codes")
 EXCEL_PATH = os.path.join(TARGET_DIR, "공정별_유해위험물질_MSDS_QR목록.xlsx")
 
 # 2. QR 코드 링크의 기본 주소 (GitHub 리포지토리 raw 파일 경로 설정)
-# 사용자가 생성한 'msds' 리포지토리의 main 브랜치 기준으로 설정합니다.
-BASE_URL = "https://github.com/KMCISEH/msds/raw/main/"
+# 모바일 기기 브라우저가 리다이렉트 없이 바로 PDF 파일 스트림을 받아 기본 PDF 뷰어로 연결할 수 있도록 직통 주소(raw.githubusercontent.com)로 지정합니다.
+BASE_URL = "https://raw.githubusercontent.com/KMCISEH/msds/main/"
 
 def clean_filename_for_url(filename):
     # 파일명을 URL 인코딩하여 링크 생성 시 오류가 없도록 처리
