@@ -112,6 +112,7 @@ def main():
         
         # 안드로이드 등 모바일 브라우저에서 다운로드 창 대신 바로 PDF를 볼 수 있도록 Google Docs Viewer 사용
         file_url = f"https://docs.google.com/viewer?url={urllib.parse.quote(raw_url, safe='')}"
+        qr_url = file_url
         
         # QR 코드 생성
         qr = qrcode.QRCode(
@@ -120,7 +121,7 @@ def main():
             box_size=10,
             border=2
         )
-        qr.add_data(file_url)
+        qr.add_data(qr_url)
         qr.make(fit=True)
         
         qr_img = qr.make_image(fill_color="black", back_color="white")
